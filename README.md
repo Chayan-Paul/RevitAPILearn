@@ -37,4 +37,10 @@ Before using this repository, make sure you have:
 1. Clone the repository:
    ```bash
    git clone <repository-url>
+License & Repository Access
+
+This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code for your own purposes.
+
+Important: You do not have push or merge permissions on this repository. Only the repository owner(s) can make changes to the main repo. You may fork or clone the repository safely without affecting the original.
+   
 
