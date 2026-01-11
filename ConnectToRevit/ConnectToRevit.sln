@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectToRevit", "ConnectToRevit\ConnectToRevit.csproj", "{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		R23|Any CPU = R23|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}.R23|Any CPU.ActiveCfg = R23|x64
+		{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}.R23|Any CPU.Build.0 = R23|x64
+		{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1F8F36-9820-4CBE-BB94-A479C3A9E147}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F84FF363-1C37-4B6F-96E9-FB452A31162B}
+	EndGlobalSection
+EndGlobal
