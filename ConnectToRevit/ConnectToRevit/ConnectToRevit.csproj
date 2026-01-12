@@ -2,7 +2,7 @@
 
   <!-- Central / shared settings -->
   <PropertyGroup>
-    <Configurations>Debug;Release;R22;R23;R25</Configurations>
+    <Configurations>Debug;Release;R20;R21;R22;R23;R24;R25</Configurations>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <AssemblyName>ConnectToRevit</AssemblyName>
@@ -24,46 +24,74 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
 
-  <!-- R22 -->
+  <!-- R20 (Revit 2020) -->
+  <PropertyGroup Condition="'$(Configuration)' == 'R20'">
+    <TargetFramework>net48</TargetFramework>
+    <DefineConstants>R20</DefineConstants>
+    <OutputPath>bin\R20\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RevitVersion>2020</RevitVersion>
+    <RevitInstallDir>$(ProgramFiles)\Autodesk\Revit $(RevitVersion)\</RevitInstallDir>
+  </PropertyGroup>
+
+  <!-- R21 (Revit 2021) -->
+  <PropertyGroup Condition="'$(Configuration)' == 'R21'">
+    <TargetFramework>net48</TargetFramework>
+    <DefineConstants>R21</DefineConstants>
+    <OutputPath>bin\R21\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RevitVersion>2021</RevitVersion>
+    <RevitInstallDir>$(ProgramFiles)\Autodesk\Revit $(RevitVersion)\</RevitInstallDir>
+  </PropertyGroup>
+
+  <!-- R22 (Revit 2022) -->
   <PropertyGroup Condition="'$(Configuration)' == 'R22'">
     <TargetFramework>net48</TargetFramework>
     <DefineConstants>R22</DefineConstants>
     <OutputPath>bin\R22\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
-
-    <!-- Revit version variable -->
     <RevitVersion>2022</RevitVersion>
     <RevitInstallDir>$(ProgramFiles)\Autodesk\Revit $(RevitVersion)\</RevitInstallDir>
   </PropertyGroup>
 
-  <!-- R23 -->
+  <!-- R23 (Revit 2023) -->
   <PropertyGroup Condition="'$(Configuration)' == 'R23'">
     <TargetFramework>net48</TargetFramework>
     <DefineConstants>R23</DefineConstants>
     <OutputPath>bin\R23\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
-
     <RevitVersion>2023</RevitVersion>
     <RevitInstallDir>$(ProgramFiles)\Autodesk\Revit $(RevitVersion)\</RevitInstallDir>
   </PropertyGroup>
 
-  <!-- R25 (example) -->
+  <!-- R24 (Revit 2024) -->
+  <PropertyGroup Condition="'$(Configuration)' == 'R24'">
+    <TargetFramework>net48</TargetFramework>
+    <DefineConstants>R24</DefineConstants>
+    <OutputPath>bin\R24\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <RevitVersion>2024</RevitVersion>
+    <RevitInstallDir>$(ProgramFiles)\Autodesk\Revit $(RevitVersion)\</RevitInstallDir>
+  </PropertyGroup>
+
+  <!-- R25 (Revit 2025) - keep net48 to match project target (change if you must target a different TFM) -->
   <PropertyGroup Condition="'$(Configuration)' == 'R25'">
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <DefineConstants>R25</DefineConstants>
-    <UseWPF>true</UseWPF>
     <OutputPath>bin\R25\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
-
     <RevitVersion>2025</RevitVersion>
     <RevitInstallDir>$(ProgramFiles)\Autodesk\Revit $(RevitVersion)\</RevitInstallDir>
   </PropertyGroup>
 
-  <!-- Revit references resolved from the dynamic RevitInstallDir -->
-  <ItemGroup Condition="'$(Configuration)' == 'R22' Or '$(Configuration)' == 'R23' Or '$(Configuration)' == 'R25'">
+  <!-- Revit references resolved from the dynamic RevitInstallDir (applies to all Revit configurations) -->
+  <ItemGroup Condition="'$(Configuration)' == 'R20' Or '$(Configuration)' == 'R21' Or '$(Configuration)' == 'R22' Or '$(Configuration)' == 'R23' Or '$(Configuration)' == 'R24' Or '$(Configuration)' == 'R25'">
     <Reference Include="RevitAPI">
       <HintPath>$(RevitInstallDir)RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -77,12 +105,6 @@
   <!-- keep PresentationCore if WPF API used by some configs -->
   <ItemGroup>
     <Reference Include="PresentationCore" />
-    <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
