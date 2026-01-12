@@ -77,6 +77,12 @@
   <!-- keep PresentationCore if WPF API used by some configs -->
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
